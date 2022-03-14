@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "l3fg4nUN/4IpmVbVL2okTCDed7nuNboBt+ruDAlC4NiJKaYbOBwl3oMdv1CPzo5hRvOMijffOLc8nC9JimUhMQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Tom\\Desktop\\LiveriesUninstaller\\LiveriesUninstaller.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Tom\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.1\\microsoft.netcore.app.runtime.win-x64.6.0.1.nupkg.sha512",
+    "C:\\Users\\Tom\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.1\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.1.nupkg.sha512",
+    "C:\\Users\\Tom\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.1\\microsoft.aspnetcore.app.runtime.win-x64.6.0.1.nupkg.sha512",
+    "C:\\Users\\Tom\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\6.0.1\\microsoft.netcore.app.crossgen2.win-x64.6.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

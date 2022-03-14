@@ -1,0 +1,15 @@
+C:\Users\Tom\Desktop\LiveriesUninstaller\bin\Debug\net6.0\LiveriesUninstaller.exe
+C:\Users\Tom\Desktop\LiveriesUninstaller\bin\Debug\net6.0\LiveriesUninstaller.deps.json
+C:\Users\Tom\Desktop\LiveriesUninstaller\bin\Debug\net6.0\LiveriesUninstaller.runtimeconfig.json
+C:\Users\Tom\Desktop\LiveriesUninstaller\bin\Debug\net6.0\LiveriesUninstaller.dll
+C:\Users\Tom\Desktop\LiveriesUninstaller\bin\Debug\net6.0\ref\LiveriesUninstaller.dll
+C:\Users\Tom\Desktop\LiveriesUninstaller\bin\Debug\net6.0\LiveriesUninstaller.pdb
+C:\Users\Tom\Desktop\LiveriesUninstaller\obj\Debug\net6.0\LiveriesUninstaller.csproj.AssemblyReference.cache
+C:\Users\Tom\Desktop\LiveriesUninstaller\obj\Debug\net6.0\LiveriesUninstaller.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tom\Desktop\LiveriesUninstaller\obj\Debug\net6.0\LiveriesUninstaller.AssemblyInfoInputs.cache
+C:\Users\Tom\Desktop\LiveriesUninstaller\obj\Debug\net6.0\LiveriesUninstaller.AssemblyInfo.cs
+C:\Users\Tom\Desktop\LiveriesUninstaller\obj\Debug\net6.0\LiveriesUninstaller.csproj.CoreCompileInputs.cache
+C:\Users\Tom\Desktop\LiveriesUninstaller\obj\Debug\net6.0\LiveriesUninstaller.dll
+C:\Users\Tom\Desktop\LiveriesUninstaller\obj\Debug\net6.0\ref\LiveriesUninstaller.dll
+C:\Users\Tom\Desktop\LiveriesUninstaller\obj\Debug\net6.0\LiveriesUninstaller.pdb
+C:\Users\Tom\Desktop\LiveriesUninstaller\obj\Debug\net6.0\LiveriesUninstaller.genruntimeconfig.cache
