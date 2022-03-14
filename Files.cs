@@ -28,13 +28,14 @@ public static class Files
     public static bool GetFiles(
         ref DirectoryInfo carDi,
         ref DirectoryInfo liveriesDi,
-    ref FileInfo[] json,
+        ref FileInfo[] json,
         ref DirectoryInfo[] liveryFolders
     )
     {
         try
         {
-
+            json = carDi.GetFiles("*.json", SearchOption.TopDirectoryOnly);
+            liveryFolders = liveriesDi.GetDirectories("*", SearchOption.TopDirectoryOnly);
             return true;
         }
         catch (Exception e)
@@ -53,5 +54,15 @@ public static class Files
             return "";
         }
         return path;
+    }
+
+    public static void NewFolder(ref DirectoryInfo appDi, string folderName)
+    {
+        string newPath = appDi.FullName + @"\" + folderName;
+        try { Directory.CreateDirectory(newPath); }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
     }
 }
