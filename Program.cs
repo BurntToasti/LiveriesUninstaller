@@ -70,13 +70,26 @@ public static class Uninstaller
             livery.GenerateUninstallList(_eventCode, ref _toUninstallList);
         }
 
-        int movedFiles = 0;
+        int movedJsonFiles = 0;
+        int movedLiveryFolders = 0;
         int unmovedFiles = 0;
+        int deletedLiveryFolders = 0;
         foreach (var livery in _toUninstallList)
         {
-            livery.MoveFiles(ref movedFiles, ref unmovedFiles);
+            livery.MoveFiles(
+                ref _uninstalledCars,
+                ref _uninstalledLiveries,
+                ref movedJsonFiles,
+                ref movedLiveryFolders,
+                ref deletedLiveryFolders,
+                ref unmovedFiles
+            );
         }
 
+        Console.WriteLine($"\nMoved {movedJsonFiles} car Json files.");
+        Console.WriteLine($"Moved {movedLiveryFolders} livery folders.");
+        Console.WriteLine($"Sucessfully deleted {deletedLiveryFolders} folders");
+        Console.WriteLine("\nFinished, press ENTER to quit");
 
         Console.ReadLine();
 

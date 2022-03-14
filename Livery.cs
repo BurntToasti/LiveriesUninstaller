@@ -84,18 +84,39 @@ public class Livery
         _liveryFiles = LiveryFolder.GetFiles();
     }
 
-    public void MoveFiles(ref int movedFiles, ref int unmovedFiles)
+    public void MoveFiles(
+        ref DirectoryInfo newCarsDi,
+        ref DirectoryInfo newLiveriesDi,
+        ref int movedJsonFiles,
+        ref int movedLiveryFolders,
+        ref int deletedLiveryFolders,
+        ref int unmovedFiles
+        )
     {
         try
         {
             //move json to cars
+            string jsonDest = newCarsDi.FullName + @"\" + LiveryJson.Name;
+            File.Move(LiveryJson.FullName, jsonDest);
+            movedJsonFiles++;
+
+            Files.NewFolder(ref newLiveriesDi, CustomSkinName);
+
+            foreach (var file in _liveryFiles)
+            {
+                string destName = newLiveriesDi.FullName + @"\" + CustomSkinName + @"\" + file.Name;
+            }
+            movedLiveryFolders++;
             //move all files to new folder in uninstall liveries
             //delete if applicable 
-            movedFiles++;
+            Directory.Delete(LiveryFolder.FullName);
+            deletedLiveryFolders++;
+
         }
         catch (Exception e)
         {
-            unmovedFiles++;
+            Console.WriteLine(e);
+            //unmovedFiles++;
         }
 
     }

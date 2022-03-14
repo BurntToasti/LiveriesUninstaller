@@ -56,9 +56,9 @@ public static class Files
         return path;
     }
 
-    public static void NewFolder(ref DirectoryInfo appDi, string folderName)
+    public static void NewFolder(ref DirectoryInfo rootDi, string folderName)
     {
-        string newPath = appDi.FullName + @"\" + folderName;
+        string newPath = rootDi.FullName + @"\" + folderName;
         try { Directory.CreateDirectory(newPath); }
         catch (Exception e)
         {
