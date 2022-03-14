@@ -20,7 +20,7 @@ public static class Uninstaller
     public static void Main()
     {
         //string appPath = Files.ExePath();
-        string appPath = @"C:\Users\Tom\Documents\Assetto Corsa Competizione\Customs";
+        string appPath = @"C:\Users\Tom\Desktop\testing\Customs";
         _appDi = new DirectoryInfo(appPath);
 
         // Find all files and directories
@@ -65,6 +65,7 @@ public static class Uninstaller
 
         });
 
+        _toUninstallList = new List<Livery>();
         foreach (var livery in _liveries)
         {
             livery.GenerateUninstallList(_eventCode, ref _toUninstallList);

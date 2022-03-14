@@ -105,6 +105,7 @@ public class Livery
             foreach (var file in _liveryFiles)
             {
                 string destName = newLiveriesDi.FullName + @"\" + CustomSkinName + @"\" + file.Name;
+                File.Move(file.FullName, destName);
             }
             movedLiveryFolders++;
             //move all files to new folder in uninstall liveries
