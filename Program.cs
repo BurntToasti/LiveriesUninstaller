@@ -19,8 +19,8 @@ public static class Uninstaller
 
     public static void Main()
     {
-        //string appPath = Files.ExePath();
-        string appPath = @"C:\Users\Tom\Desktop\testing\Customs";
+        string appPath = Files.ExePath();
+        //string appPath = @"C:\Users\Tom\Desktop\testing\Customs";
         _appDi = new DirectoryInfo(appPath);
 
         // Find all files and directories
