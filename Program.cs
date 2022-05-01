@@ -47,7 +47,25 @@ public static class Uninstaller
             _liveries.Add(new Livery(carJson));
         }
 
-        Parallel.ForEach(_liveries, livery =>
+        // Parallel.ForEach(_liveries, livery =>
+        // {
+        //     livery.ReadJson();
+        //     if (livery.CustomSkinName != "")
+        //     {
+        //         try
+        //         {
+        //             livery.LiveryFolder = _liveriesDi.GetDirectories(livery.CustomSkinName)[0];
+        //         }
+        //         catch (Exception e)
+        //         {
+
+        //         }
+        //         livery.GetLiveryFiles();
+        //     }
+
+        // }); this broke on morph's pc, changed to the dull way for now
+
+        foreach (var livery in _liveries)
         {
             livery.ReadJson();
             if (livery.CustomSkinName != "")
@@ -63,7 +81,7 @@ public static class Uninstaller
                 livery.GetLiveryFiles();
             }
 
-        });
+        }
 
         _toUninstallList = new List<Livery>();
         foreach (var livery in _liveries)
