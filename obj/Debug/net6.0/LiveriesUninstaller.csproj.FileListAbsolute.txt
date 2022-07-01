@@ -13,3 +13,5 @@ C:\Users\Tom\Desktop\LiveriesUninstaller\obj\Debug\net6.0\LiveriesUninstaller.dl
 C:\Users\Tom\Desktop\LiveriesUninstaller\obj\Debug\net6.0\ref\LiveriesUninstaller.dll
 C:\Users\Tom\Desktop\LiveriesUninstaller\obj\Debug\net6.0\LiveriesUninstaller.pdb
 C:\Users\Tom\Desktop\LiveriesUninstaller\obj\Debug\net6.0\LiveriesUninstaller.genruntimeconfig.cache
+C:\Users\Tom\Desktop\LiveriesUninstaller\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Tom\Desktop\LiveriesUninstaller\obj\Debug\net6.0\LiveriesUninstaller.csproj.CopyComplete
