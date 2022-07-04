@@ -1,0 +1,2 @@
+C:\Users\Tom\Desktop\LiveriesUninstaller\bin\Debug\net6.0\win-x64\publish\LiveriesUninstaller.pdb
+C:\Users\Tom\Desktop\LiveriesUninstaller\bin\Debug\net6.0\win-x64\publish\LiveriesUninstaller.exe

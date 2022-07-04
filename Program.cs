@@ -46,7 +46,9 @@ public static class Uninstaller
             string appPath = new string("");
             if (toasterMode)
             {
-                appPath = @"C:\Users\Tom\Desktop\testing\Customs";
+                Console.WriteLine("Manually add Customs path");
+                appPath = Console.ReadLine();
+                //appPath = @"C:\Users\Tom\Desktop\testing\Customs";
             }
             else
             {
@@ -61,20 +63,26 @@ public static class Uninstaller
             _appDi = new DirectoryInfo(appPath);
 
             // Find all files and directories
-            if (!Files.GetDirectories(ref _appDi, ref _carDi, ref _liveriesDi)) { return; }
-            if (!Files.GetFiles(ref _carDi, ref _liveriesDi, ref _carJsons, ref _liveryFolders)) { return; }
+            bool findDir = Files.GetDirectories(ref _appDi, ref _carDi, ref _liveriesDi);
+            if (debug) { Debug.Directories(findDir); }
+            if (!findDir) { return; }
+
+            bool findFiles = Files.GetFiles(ref _carDi, ref _liveriesDi, ref _carJsons, ref _liveryFolders);
+            if (debug) { Debug.Files(findDir); }
+            if (!findFiles) { return; }
 
             // Make output folders if it don't exist bruh
             Files.NewFolder(ref _appDi, "UninstalledLiveries");
             DirectoryInfo uninstallDi = new DirectoryInfo(_appDi.FullName + @"\UninstalledLiveries");
             Files.NewFolder(ref _appDi, @"UninstalledLiveries\Cars");
             Files.NewFolder(ref _appDi, @"UninstalledLiveries\Liveries");
+            if (debug) { Debug.FoldersCreated(true); }
 
             _uninstalledCars = uninstallDi.GetDirectories("Cars")[0];
             _uninstalledLiveries = uninstallDi.GetDirectories("Liveries")[0];
 
             Console.WriteLine("Please enter the AOR event code to remove.");
-            Console.WriteLine("E.g EC_S2");
+            Console.WriteLine("E.g SX_GT3");
             _eventCode = Console.ReadLine();
 
             // Add all car livery jsons to an list
@@ -83,6 +91,8 @@ public static class Uninstaller
             {
                 _liveries.Add(new Livery(carJson));
             }
+            if (debug) { Debug.AddJson(); }
+
 
             foreach (var livery in _liveries)
             {
@@ -95,18 +105,22 @@ public static class Uninstaller
                     }
                     catch (Exception e)
                     {
-
+                        if (debug)
+                        {
+                            Console.WriteLine(e);
+                        }
                     }
                     livery.GetLiveryFiles();
                 }
-
             }
+            if (debug) { Debug.LiveryFilesRead(); }
 
             _toUninstallList = new List<Livery>();
             foreach (var livery in _liveries)
             {
                 livery.GenerateUninstallList(_eventCode, ref _toUninstallList);
             }
+            if (debug) { Debug.FilesToRemove(); }
 
             int movedJsonFiles = 0;
             int movedLiveryFolders = 0;

@@ -1,0 +1,6 @@
+C:\Users\Tom\Desktop\LiveriesUninstaller\bin\Debug\net6.0\publish\LiveriesUninstaller.exe
+C:\Users\Tom\Desktop\LiveriesUninstaller\bin\Debug\net6.0\publish\LiveriesUninstaller.dll
+C:\Users\Tom\Desktop\LiveriesUninstaller\bin\Debug\net6.0\publish\LiveriesUninstaller.deps.json
+C:\Users\Tom\Desktop\LiveriesUninstaller\bin\Debug\net6.0\publish\LiveriesUninstaller.runtimeconfig.json
+C:\Users\Tom\Desktop\LiveriesUninstaller\bin\Debug\net6.0\publish\LiveriesUninstaller.pdb
+C:\Users\Tom\Desktop\LiveriesUninstaller\bin\Debug\net6.0\publish\Newtonsoft.Json.dll

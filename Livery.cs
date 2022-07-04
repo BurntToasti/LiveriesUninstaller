@@ -28,7 +28,7 @@ public class Livery
                 Encoding.Unicode,
                 Encoding.UTF8,
                 Encoding.BigEndianUnicode,
-                Encoding.UTF7,
+                //Encoding.UTF7,
                 Encoding.ASCII,
                 Encoding.UTF32,
                 new UTF32Encoding(true, true)
