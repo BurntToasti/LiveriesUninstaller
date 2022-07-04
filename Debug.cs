@@ -36,18 +36,18 @@ public static class Debug
         }
     }
 
-    public static void AddJson()
+    public static void AddJson(int number)
     {
-        Console.WriteLine("Json Files Stored");
+        Console.WriteLine($"{number} Json Files Stored");
     }
 
-    public static void LiveryFilesRead()
+    public static void LiveryFilesRead(int number)
     {
-        Console.WriteLine("Livery Files Read");
+        Console.WriteLine($"{number} Livery Files Read");
     }
 
-    public static void FilesToRemove()
+    public static void FilesToRemove(List<Livery> list)
     {
-        Console.WriteLine("Liveries to remove stored");
+        Console.WriteLine($"{list.Count} Liveries to remove stored");
     }
 }

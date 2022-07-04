@@ -102,21 +102,32 @@ public class Livery
 
             Files.NewFolder(ref newLiveriesDi, CustomSkinName);
 
-            foreach (var file in _liveryFiles)
+            if (_liveryFiles is not null)
             {
-                string destName = newLiveriesDi.FullName + @"\" + CustomSkinName + @"\" + file.Name;
-                File.Move(file.FullName, destName);
+                foreach (var file in _liveryFiles)
+                {
+                    string destName = newLiveriesDi.FullName + @"\" + CustomSkinName + @"\" + file.Name;
+                    File.Move(file.FullName, destName);
+                }
+
+                Directory.Delete(LiveryFolder.FullName);
+                deletedLiveryFolders++;
+                movedLiveryFolders++;
             }
-            movedLiveryFolders++;
+
+
             //move all files to new folder in uninstall liveries
             //delete if applicable 
-            Directory.Delete(LiveryFolder.FullName);
-            deletedLiveryFolders++;
+
 
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
+            if (Uninstaller.debug)
+            {
+                Console.WriteLine(e);
+            }
+
             //unmovedFiles++;
         }
 

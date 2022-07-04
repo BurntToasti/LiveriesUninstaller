@@ -15,7 +15,7 @@ public static class Uninstaller
     static string _eventCode;
     static List<Livery> _liveries;
     static List<Livery> _toUninstallList;
-    static bool debug;
+    public static bool debug;
     static bool toasterMode;
 
 
@@ -48,7 +48,7 @@ public static class Uninstaller
             {
                 Console.WriteLine("Manually add Customs path");
                 appPath = Console.ReadLine();
-                //appPath = @"C:\Users\Tom\Desktop\testing\Customs";
+                // appPath = @"C:\Users\Tom\Desktop\testing\Customs";
             }
             else
             {
@@ -87,13 +87,15 @@ public static class Uninstaller
 
             // Add all car livery jsons to an list
             _liveries = new List<Livery>();
+            int number = 0;
             foreach (var carJson in _carJsons)
             {
+                number++;
                 _liveries.Add(new Livery(carJson));
             }
-            if (debug) { Debug.AddJson(); }
+            if (debug) { Debug.AddJson(number); }
 
-
+            int livNumber = 0;
             foreach (var livery in _liveries)
             {
                 livery.ReadJson();
@@ -102,6 +104,8 @@ public static class Uninstaller
                     try
                     {
                         livery.LiveryFolder = _liveriesDi.GetDirectories(livery.CustomSkinName)[0];
+                        livery.GetLiveryFiles();
+                        livNumber++;
                     }
                     catch (Exception e)
                     {
@@ -110,17 +114,17 @@ public static class Uninstaller
                             Console.WriteLine(e);
                         }
                     }
-                    livery.GetLiveryFiles();
+
                 }
             }
-            if (debug) { Debug.LiveryFilesRead(); }
+            if (debug) { Debug.LiveryFilesRead(livNumber); }
 
             _toUninstallList = new List<Livery>();
             foreach (var livery in _liveries)
             {
                 livery.GenerateUninstallList(_eventCode, ref _toUninstallList);
             }
-            if (debug) { Debug.FilesToRemove(); }
+            if (debug) { Debug.FilesToRemove(_toUninstallList); }
 
             int movedJsonFiles = 0;
             int movedLiveryFolders = 0;
